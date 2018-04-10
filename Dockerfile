@@ -77,3 +77,6 @@ RUN echo "Installing Gradle" \
 	&& rm gradle.zip \
 	&& mv "gradle-${GRADLE_VERSION}" "${GRADLE_HOME}/" \
 	&& ln --symbolic "${GRADLE_HOME}/bin/gradle" /usr/bin/gradle
+
+RUN echo "Installing build tools" \
+	&& apt-get install -y build-essential git python g++ make
