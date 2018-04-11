@@ -79,4 +79,5 @@ RUN echo "Installing Gradle" \
 	&& ln --symbolic "${GRADLE_HOME}/bin/gradle" /usr/bin/gradle
 
 RUN echo "Installing build tools" \
-	&& apt-get install -y build-essential git python g++ make
+	&& apt-get install -y build-essential git python g++ make python-setuptools -y \
+	&& easy_install pip && pip install awscli
